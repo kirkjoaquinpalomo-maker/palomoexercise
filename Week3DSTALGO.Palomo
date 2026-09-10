@@ -1,0 +1,59 @@
+Exercise 1
+
+using System;
+using System.Windows.Forms;
+
+namespace week3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            int number = Convert.ToInt32(txtNumber.Text);
+
+            if (number % 2 == 0)
+            {
+                lblResult.Text = "The number is even.";
+            }
+            else
+            {
+                lblResult.Text = "The number is odd.";
+            }
+        }
+    }
+}
+
+Exerice 2
+
+using System;
+using System.Windows.Forms;
+
+namespace week3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            int number = Convert.ToInt32(txtNumber.Text);
+
+            if (number >= 0)
+            {
+                lblResult.Text = "The number is positive.";
+            }
+            else
+            {
+                lblResult.Text = "The number is negative.";
+            }
+        }
+    }
+}
