@@ -1,0 +1,44 @@
+Data Structures and Algorithms
+
+Data structures are ways to store and organize data in a computer. An algorithm is a set of steps used to solve a problem. They work together to help programs manage data.
+
+Linear Data Structure
+
+A linear data structure stores data in order, one after another. Examples are arrays, linked lists, stacks, and queues.
+
+One-Dimensional Array
+
+A one-dimensional array stores values in one line. Each value has an index that usually starts at 0.
+
+Example:
+
+[10, 20, 30, 40, 50]
+Big O Notation
+
+Big O Notation shows how the time needed by an algorithm changes when the amount of data gets bigger.
+
+Examples:
+
+O(1) – stays almost the same
+O(log n) – grows slowly
+O(n) – grows with the data
+O(n²) – grows quickly
+Basic Searching Algorithms
+
+Searching algorithms are used to find an item in a group of data.
+
+Linear Search
+
+Linear Search checks each item one by one until it finds the item. It can work with unsorted data and has a time complexity of O(n).
+
+Binary Search
+
+Binary Search checks the middle item and removes half of the search area each time. The data must be sorted. It has a time complexity of O(log n).
+
+References:
+
+GeeksforGeeks – Data Structures
+https://www.geeksforgeeks.org/dsa/data-structure-meaning/
+
+GeeksforGeeks – Linear Data Structures
+https://www.geeksforgeeks.org/dsa/introduction-to-linear-data-structures/
