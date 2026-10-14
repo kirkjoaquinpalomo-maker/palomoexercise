@@ -1,0 +1,315 @@
+using System;
+using System.Reflection.Emit;
+using System.Windows.Forms;
+
+namespace Week_5_6_Lab_Activity
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            comboBox1.Items.Add("Example 1 - Constant Time");
+            comboBox1.Items.Add("Example 2 - Add 2 Numbers");
+            comboBox1.Items.Add("Example 3 - Get the first item");
+            comboBox1.Items.Add("Example 4 - Print every number");
+            comboBox1.Items.Add("Example 5 - Find a name");
+            comboBox1.Items.Add("Example 6 - Calculate the total");
+            comboBox1.Items.Add("Example 7 - Binary Search");
+            comboBox1.Items.Add("Example 8 - Keep dividing by 2");
+            comboBox1.Items.Add("Example 9 - Binary-Search-Style Guessing");
+            comboBox1.Items.Add("Example 10 - Quadratic Time");
+            comboBox1.Items.Add("Example 11 - Two Loops");
+            comboBox1.Items.Add("Example 12 - Compare Students");
+            comboBox1.Items.Add("Example 13 - Multiplication Table");
+            comboBox1.Items.Add("Example 14 - Light Switches");
+            comboBox1.Items.Add("Example 15 - Coin Toss");
+
+            comboBox1.SelectedIndex = 0;
+
+            labelTitle.Text = "ALGORITHM EXAMPLES";
+            button1.Text = "RUN EXAMPLE";
+            label2.Text = "Output will appear here.";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label2.Text = "";
+
+            // Example 1: Constant Time 
+            if (comboBox1.SelectedIndex == 0)
+            {
+                int[] numbers = { 10, 20, 30, 40, 50 };
+                int answer = numbers[2];
+
+                label2.Text = answer.ToString();
+            }
+
+            // Example 2: Add 2 Numbers 
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                int a = 10;
+                int b = 20;
+                int sum = a + b;
+
+                label2.Text = sum.ToString();
+            }
+
+            // Example 3: Get the first item 
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                string[] fruits = { "Apple", "Banana", "Mango" };
+
+                label2.Text = fruits[0];
+            }
+
+            // Example 4: Print every number 
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                int[] numbers = { 10, 20, 30, 40, 50 };
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    label2.Text += numbers[i] + Environment.NewLine;
+                }
+            }
+
+            // Example 5: Find a name 
+            else if (comboBox1.SelectedIndex == 4)
+            {
+                string[] names = { "Ana", "Ben", "Carlo", "David" };
+
+                foreach (string name in names)
+                {
+                    if (name == "Carlo")
+                    {
+                        label2.Text = "Found!";
+                        break;
+                    }
+                }
+            }
+
+            // Example 6: Calculate the total 
+            else if (comboBox1.SelectedIndex == 5)
+            {
+                int[] numbers = { 5, 10, 15 };
+                int total = 0;
+
+                foreach (int number in numbers)
+                {
+                    total = total + number;
+                }
+
+                label2.Text = total.ToString();
+            }
+
+            // Example 7: Binary Search 
+            else if (comboBox1.SelectedIndex == 6)
+            {
+                int[] numbers = { 10, 20, 30, 40, 50, 60, 70 };
+                int left = 0;
+                int right = numbers.Length - 1;
+
+                while (left <= right)
+                {
+                    int middle = (left + right) / 2;
+
+                    if (numbers[middle] == 50)
+                    {
+                        label2.Text = "Found!";
+                        break;
+                    }
+                    else if (numbers[middle] < 50)
+                    {
+                        left = middle + 1;
+                    }
+                    else
+                    {
+                        right = middle - 1;
+                    }
+                }
+            }
+
+            // Example 8: Keep dividing by 2 
+            else if (comboBox1.SelectedIndex == 7)
+            {
+                int n = 16;
+
+                while (n > 1)
+                {
+                    n = n / 2;
+                }
+
+                label2.Text = n.ToString();
+            }
+
+            // Example 9: Binary-Search-Style Guessing 
+            else if (comboBox1.SelectedIndex == 8)
+            {
+                int low = 1;
+                int high = 100;
+                int target = 1;
+
+                while (low <= high)
+                {
+                    int middle = (low + high) / 2;
+
+                    label2.Text += middle + Environment.NewLine;
+
+                    if (middle == target)
+                    {
+                        label2.Text += "Found!";
+                        break;
+                    }
+                    else if (middle < target)
+                    {
+                        low = middle + 1;
+                    }
+                    else
+                    {
+                        high = middle - 1;
+                    }
+                }
+            }
+
+            // Example 10: Quadratic Time 
+            else if (comboBox1.SelectedIndex == 9)
+            {
+                int[] numbers = { 1, 2, 3, 4, 5 };
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    for (int j = 0; j < numbers.Length; j++)
+                    {
+                        label2.Text += numbers[i] + " " + numbers[j]
+                            + Environment.NewLine;
+                    }
+                }
+            }
+
+            // Example 11: Two Loops 
+            else if (comboBox1.SelectedIndex == 10)
+            {
+                int[] numbers = { 1, 2, 3 };
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    for (int j = 0; j < numbers.Length; j++)
+                    {
+                        label2.Text += numbers[i] + " " + numbers[j]
+                            + Environment.NewLine;
+                    }
+                }
+            }
+
+            // Example 12: Compare Students 
+            else if (comboBox1.SelectedIndex == 11)
+            {
+                string[] students = { "Ana", "Ben", "Carlo" };
+
+                for (int i = 0; i < students.Length; i++)
+                {
+                    for (int j = 0; j < students.Length; j++)
+                    {
+                        label2.Text += students[i] + " checks "
+                            + students[j] + Environment.NewLine;
+                    }
+                }
+            }
+
+            // Example 13: Multiplication Table
+            else if (comboBox1.SelectedIndex == 12)
+            {
+                for (int i = 1; i <= 5; i++)
+                {
+                    for (int j = 1; j <= 5; j++)
+                    {
+                        label2.Text += i + " x " + j + " = "
+                            + (i * j) + Environment.NewLine;
+                    }
+                }
+            }
+
+            // Example 14: Light Switches
+            else if (comboBox1.SelectedIndex == 13)
+            {
+                int n = 3;
+                int combinations = 1;
+
+                for (int i = 0; i < n; i++)
+                {
+                    combinations = combinations * 2;
+                }
+
+                label2.Text = "Number of combinations: "
+                    + combinations + Environment.NewLine
+                    + Environment.NewLine;
+
+                for (int i = 0; i < combinations; i++)
+                {
+                    string switches = Convert.ToString(i, 2)
+                        .PadLeft(n, '0');
+
+                    string result = "";
+
+                    foreach (char state in switches)
+                    {
+                        if (state == '0')
+                        {
+                            result += "OFF ";
+                        }
+                        else
+                        {
+                            result += "ON ";
+                        }
+                    }
+
+                    label2.Text += result + Environment.NewLine;
+                }
+            }
+
+            // Example 15: Coin Toss 
+            else if (comboBox1.SelectedIndex == 14)
+            {
+                int tosses = 5;
+                int possibilities = 1;
+
+                for (int i = 0; i < tosses; i++)
+                {
+                    possibilities = possibilities * 2;
+                }
+
+                label2.Text = "Possible results: "
+                    + possibilities + Environment.NewLine
+                    + Environment.NewLine;
+
+                for (int i = 0; i < possibilities; i++)
+                {
+                    string tossResult = Convert.ToString(i, 2)
+                        .PadLeft(tosses, '0');
+
+                    string result = "";
+
+                    foreach (char toss in tossResult)
+                    {
+                        if (toss == '0')
+                        {
+                            result += "Heads ";
+                        }
+                        else
+                        {
+                            result += "Tails ";
+                        }
+                    }
+
+                    label2.Text += result + Environment.NewLine;
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+    }
+}
